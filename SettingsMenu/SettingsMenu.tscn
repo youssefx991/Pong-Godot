@@ -86,4 +86,5 @@ custom_fonts/font = SubResource( 3 )
 text = "Back"
 
 [connection signal="toggled" from="MarginContainer/SettingsContainer/DifficultyContainer/EasyBox" to="." method="_on_EasyBox_toggled"]
+[connection signal="toggled" from="MarginContainer/SettingsContainer/DifficultyContainer/HardBox" to="." method="_on_HardBox_toggled"]
 [connection signal="pressed" from="MarginContainer/SettingsContainer/Back" to="." method="_on_Back_pressed"]

@@ -23,7 +23,7 @@ func _on_Settings_pressed():
 	get_tree().change_scene("res://SettingsMenu/SettingsMenu.tscn")
 
 func _on_Highscores_pressed():
-	print("Score")
+	get_tree().change_scene("res://SettingsMenu/SettingsMenu.tscn")
 	
 func _on_Quit_pressed():
 	get_tree().quit()

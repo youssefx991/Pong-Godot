@@ -1,20 +1,7 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+var is_easy = false
+var is_hard = false
 
 func _on_Back_pressed():
 	var out = get_tree().change_scene("res://MainMenu/MainMenu.tscn")
@@ -22,4 +9,11 @@ func _on_Back_pressed():
 
 
 func _on_EasyBox_toggled(button_pressed):
-	pass # Replace with function body.
+	Singelton.value = 150
+	Singelton.difficulty = "Easy"
+
+
+func _on_HardBox_toggled(button_pressed):
+	Singelton.value = 30
+	Singelton.difficulty = "Hard"
+	

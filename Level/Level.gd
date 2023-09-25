@@ -8,6 +8,7 @@ func _ready():
 	
 func _process(delta):
 	$PlayerScore.text = str(PlayerScore)
+	Scores.player_score = PlayerScore
 	$OpponentScore.text = str(OpponentScore)
 	$Countdown.text = str(int($Timer.time_left) + 1)
 	
