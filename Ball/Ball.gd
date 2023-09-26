@@ -38,5 +38,5 @@ func restart_ball():
 		velocity.x = [-1, 1][randi() % 2]
 		
 	speed = 600
-	velocity.x = [-1, 1][randi() % 2]
+	#velocity.x = [-1, 1][randi() % 2]
 	velocity.y = [-0.8, 0.8][randi() % 2]
