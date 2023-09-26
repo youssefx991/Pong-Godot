@@ -7,7 +7,7 @@ var velocity = Vector2.ZERO
 func _ready():
 	randomize()
 	
-	if (Singelton.difficulty == "Easy"):
+	if (Singleton.difficulty == "Easy"):
 		velocity.x = 1
 	else:
 		velocity.x = [-1, 1][randi() % 2]
@@ -20,9 +20,15 @@ func _physics_process(delta):
 	if collision_info:
 		velocity = velocity.bounce(collision_info.normal)
 		$CollisionSound.play()
+	
+	if (Singleton.difficulty == 'Hard'):
+		if (speed == 0):
+			speed += Singleton.ball_acceleration * speed
+		else:
+			speed += Singleton.ball_acceleration
 		
 func stop_ball():
-	if (Singelton.difficulty == "Easy"):
+	if (Singleton.difficulty == "Easy"):
 		velocity.x = 1
 	else:
 		velocity.x = [-1, 1][randi() % 2]
@@ -32,7 +38,7 @@ func stop_ball():
 	speed = 0
 	
 func restart_ball():
-	if (Singelton.difficulty == "Easy"):
+	if (Singleton.difficulty == "Easy"):
 		velocity.x = 1
 	else:
 		velocity.x = [-1, 1][randi() % 2]

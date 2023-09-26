@@ -8,7 +8,7 @@ func _ready():
 	ball = get_parent().find_node('Ball')
 	
 func _physics_process(delta):
-	distance = Singelton.value
+	distance = Singleton.value
 	move_and_slide(Vector2(0, ball_direction()) * speed)
 
 func ball_direction():

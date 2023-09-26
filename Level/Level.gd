@@ -1,10 +1,13 @@
 extends Node2D
 
-var PlayerScore = 0
-var OpponentScore = 0
+var PlayerScore
+var OpponentScore
 	
 func _ready():
+	PlayerScore = 0
+	OpponentScore = 0
 	reset_ball()
+	Singleton.game_status = ''
 	
 func _process(delta):
 	$PlayerScore.text = str(PlayerScore)
@@ -21,7 +24,7 @@ func reset_ball():
 	$ScoreSound.play()
 	$Player.position = Vector2(35, 360)
 	$Opponent.position = Vector2(1280 - 35, 360)
-
+	
 
 func _on_Timer_timeout():
 	get_tree().call_group('BallGroup', 'restart_ball')
@@ -30,7 +33,12 @@ func _on_Timer_timeout():
 
 func _on_WallLeft_body_entered(body):
 	OpponentScore += 1
-	reset_ball()
+	if (OpponentScore == 3):
+		Singleton.game_status = 'Game Over'
+		Scores.addScore(Scores.player_score)
+		get_tree().change_scene("res://MainMenu/MainMenu.tscn")
+	else:
+		reset_ball()
 
 func _on_WallRight_body_entered(body):
 	PlayerScore += 1

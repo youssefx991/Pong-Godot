@@ -1,19 +1,17 @@
 extends Control
 
-var is_easy = false
-var is_hard = false
 
+func _ready():
+	$MarginContainer/SettingsContainer/DifficultyContainer/EasyBtn.pressed = Singleton.is_easy
+	$MarginContainer/SettingsContainer/DifficultyContainer/HardBtn.pressed = Singleton.is_hard
+	
 func _on_Back_pressed():
 	var out = get_tree().change_scene("res://MainMenu/MainMenu.tscn")
 	print(out)
 
+func _on_EasyBtn_pressed():
+	Singleton.set_easy()
 
-func _on_EasyBox_toggled(button_pressed):
-	Singelton.value = 150
-	Singelton.difficulty = "Easy"
-
-
-func _on_HardBox_toggled(button_pressed):
-	Singelton.value = 30
-	Singelton.difficulty = "Hard"
+func _on_HardBtn_pressed():
+	Singleton.set_hard()
 	

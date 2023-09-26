@@ -20,6 +20,7 @@ func _sortScores(a, b):
 
 # Display the high scores
 func displayScores():
+	text = ''
 	for i in range(highScores.size()):
 		print("Score ", i + 1, ": ", highScores[i])
 		text += "Score " + str(i + 1) + ": " + str(highScores[i]) + "\n"
