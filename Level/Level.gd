@@ -10,7 +10,7 @@ func _ready():
 
 func _process(delta):
 	$PlayerScore.text = str(PlayerScore)
-	Scores.player_score = PlayerScore
+	#Scores.player_score = PlayerScore
 	$OpponentScore.text = str(OpponentScore)
 	$Countdown.text = str(int($Timer.time_left) + 1)
 	
@@ -33,7 +33,7 @@ func _on_Timer_timeout():
 func _on_WallLeft_body_entered(body):
 	OpponentScore += 1
 	if (OpponentScore == 1):
-		Scores.addScore(Scores.player_score)
+		Singleton.player_score = PlayerScore
 		get_tree().change_scene("res://LoseMenu/LoseMenu.tscn")
 	else:
 		reset_ball()
