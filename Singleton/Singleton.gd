@@ -85,9 +85,14 @@ func file_read():
 		print("Wrote success")
 		file.close()
 
-	# Print the 'players' dictionary (optional)
-#	for player in players:
-#		print("Name:", player["name"])
-#		#print("Score:", player["score"])
-#		print()
-			
+func file_write():
+	var file = File.new()
+	if file.open("res://players.txt", File.WRITE) == OK:
+		for player in players:
+			# Write player data to the file in the specified format
+			file.store_line(player["name"] + " : " + str(player["score"]))
+			file.store_line("\n")  
+
+		file.close()
+	else:
+		print("Failed to open the file for writing.")

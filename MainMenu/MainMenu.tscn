@@ -19,6 +19,7 @@ func _on_Highscores_pressed():
 	get_tree().change_scene(\"res://HighScoresMenu/HighScoresMenu.tscn\")
 	
 func _on_Quit_pressed():
+	Singleton.file_write()
 	get_tree().quit()
 
 
