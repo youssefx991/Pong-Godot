@@ -5,18 +5,16 @@
 [sub_resource type="GDScript" id=4]
 script/source = "extends Control
 
-func _process(delta):
-	$MarginContainer/VBoxContainer/Status.text = Singleton.game_status
+
 
 func _on_Play_pressed():
 	get_tree().change_scene(\"res://Level/Level.tscn\")
 
 func _on_Settings_pressed():
-	Singleton.game_status = ''
 	get_tree().change_scene(\"res://SettingsMenu/SettingsMenu.tscn\")
 
 func _on_Highscores_pressed():
-	Singleton.game_status = ''
+	
 	Scores.displayScores()
 	get_tree().change_scene(\"res://HighScoresMenu/HighScoresMenu.tscn\")
 	
