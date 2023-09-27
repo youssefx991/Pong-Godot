@@ -22,7 +22,6 @@ func _on_Quit_pressed():
 
 func _on_Main_pressed():
 	self.is_paused = false
-	Scores.addScore(Scores.player_score)
 	var out = get_tree().change_scene("res://MainMenu/MainMenu.tscn")
 	print(out)
 

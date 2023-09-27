@@ -6,6 +6,6 @@ func _on_AddBtn_pressed():
 	if ($MarginContainer/VBoxContainer/LineEdit.text == ''):
 		$MarginContainer/VBoxContainer/Label.text = "Do not leave it empty"
 	else:
-		print($MarginContainer/VBoxContainer/LineEdit.text)	
-		$MarginContainer/VBoxContainer/Label.text = "Enter your name LOSER"
+		Singleton.add_player($MarginContainer/VBoxContainer/LineEdit.text)
+		get_tree().change_scene("res://MainMenu/MainMenu.tscn")
 		
