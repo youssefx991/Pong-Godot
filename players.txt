@@ -1,18 +1,24 @@
-Sameh : 4
+Messi : 8
 
 
-Ahmed : 3
+CJ : 4
 
 
-Youssef : 2
+Tito : 3
 
 
-Omar : 1
+Kratos : 3
 
 
-Admin : 0
+Walter: 2
 
 
-Ayman : 0
+Payne : 1
+
+
+Dexter : 0
+
+
+Parker : 0
 
 
