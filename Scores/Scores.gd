@@ -19,7 +19,11 @@ var text = " "
 # Display the high scores
 func displayScores():
 	text = ''
+	var i = 1
 	for player in Singleton.players:
 		print(player["name"] + ": " + str(player["score"]))
 		text += player["name"] + ": " + str(player["score"]) + "\n"
+		if (i == 5):
+			break
+		i+=1
 		
