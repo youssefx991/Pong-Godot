@@ -32,11 +32,18 @@ func _on_Timer_timeout():
 
 func _on_WallLeft_body_entered(body):
 	OpponentScore += 1
-	if (OpponentScore == 1):
-		Singleton.player_score = PlayerScore
-		get_tree().change_scene("res://LoseMenu/LoseMenu.tscn")
+	if (Singleton.is_hard):
+		if (OpponentScore == 1):
+			Singleton.player_score = PlayerScore
+			get_tree().change_scene("res://LoseMenu/LoseMenu.tscn")
+		else:
+			reset_ball()
 	else:
-		reset_ball()
+		if (OpponentScore == 3):
+			Singleton.player_score = PlayerScore
+			get_tree().change_scene("res://LoseMenu/LoseMenu.tscn")
+		else:
+			reset_ball()
 
 func _on_WallRight_body_entered(body):
 	PlayerScore += 1
